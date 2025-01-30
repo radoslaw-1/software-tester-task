@@ -13,6 +13,11 @@ const selectors = {
     },
   },
   searchResults: {
+    tabs: {
+      images: "#b-scopeListItem-images",
+      videos: "#b-scopeListItem-video",
+      news: "#b-scopeListItem-news",
+    },
     pageContent: "#b_content",
     resultsList: "#b_results li:first-of-type",
   },
@@ -34,5 +39,14 @@ test("verify the first result in the default search", async ({
   page
 }) => {
   const firstResultCite = await page.locator(selectors.searchResults.resultsList).locator("cite").textContent();
+  expect(firstResultCite).not.toBeNull();
   expect(firstResultCite).toContain(firstResultExpected);
 });
+
+test("verify the category filters", async ({
+  page
+}) => {
+  for (let category in selectors.searchResults.tabs) {
+    console.log(category);
+  }
+})

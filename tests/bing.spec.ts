@@ -48,5 +48,7 @@ for (const [key, id] of Object.entries(selectors.searchResults.tabs)) {
     page
   }) => {
     await page.locator(id).click();
+    await page.waitForURL(url => url.toString().includes(key));
+    expect(page.url()).toContain(key);
   })
 }

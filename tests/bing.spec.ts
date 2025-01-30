@@ -52,3 +52,5 @@ for (const [key, id] of Object.entries(selectors.searchResults.tabs)) {
     expect(page.url()).toContain(key);
   })
 }
+
+// TODO: think of a way to verify the results are relevant to the search phrase

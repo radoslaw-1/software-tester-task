@@ -9,7 +9,7 @@ Feature: Searching for the word "semrush" on bing.com, filtered by content categ
     Given I am on the Bing homepage
     When I search for "semrush"
     And I navigate to the "<Category>" tab
-    Then all results should be relevant to "semrush"
+    Then returned results should be relevant to "semrush"
 
     Examples:
       | Category  |
@@ -22,7 +22,7 @@ Feature: Searching for the word "semrush" on bing.com, filtered by content categ
     When I search for "semrush"
     And I navigate to the "News" tab
     And I select the "<Date Filter>" date filter
-    Then all results should be relevant to "semrush"
+    Then returned results should be relevant to "semrush"
     And the dates of results should not be older than "<Date Filter>"
 
     Examples:

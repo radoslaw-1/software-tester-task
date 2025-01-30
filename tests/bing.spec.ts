@@ -47,7 +47,9 @@ test("verify the first result in the default search", async ({ page }) => {
 for (const [key, id] of Object.entries(selectors.searchResults.tabs)) {
   test(`verify the ${key} filter`, async ({ page }) => {
     await page.locator(id).click();
-    await page.waitForURL((url) => url.toString().startsWith(`${bingHomepage}/${key}`));
+    await page.waitForURL((url) =>
+      url.toString().startsWith(`${bingHomepage}/${key}`)
+    );
     expect(page.url().startsWith(`${bingHomepage}/${key}`)).toBeTruthy();
   });
 }

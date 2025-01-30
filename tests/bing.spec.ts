@@ -1,7 +1,7 @@
 import { Page } from "@playwright/test";
 import { test, expect } from "@playwright/test";
 
-const bingHomepage = "https://www.bing.com/";
+const bingHomepage = "https://www.bing.com";
 const searchPhrase = "semrush";
 const firstResultExpected = "www.semrush.com";
 
@@ -45,10 +45,10 @@ test("verify the first result in the default search", async ({ page }) => {
 });
 
 for (const [key, id] of Object.entries(selectors.searchResults.tabs)) {
-  test(`verify the ${key} filters`, async ({ page }) => {
+  test(`verify the ${key} filter`, async ({ page }) => {
     await page.locator(id).click();
-    await page.waitForURL((url) => url.toString().includes(key));
-    expect(page.url()).toContain(key);
+    await page.waitForURL((url) => url.toString().startsWith(`${bingHomepage}/${key}`));
+    expect(page.url().startsWith(`${bingHomepage}/${key}`)).toBeTruthy();
   });
 }
 

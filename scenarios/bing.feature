@@ -8,7 +8,7 @@ Feature: Searching for the word "semrush" on bing.com, filtered by content categ
   Scenario Outline: Verify the "<Category>" filter
     Given I am on the Bing homepage
     When I search for "semrush"
-    And I navigate to th "<Category>" tab
+    And I navigate to the "<Category>" tab
     Then all results should be relevant to "semrush"
 
     Examples:

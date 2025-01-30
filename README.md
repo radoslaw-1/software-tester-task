@@ -11,6 +11,8 @@ The test cases and automation assume that at least one result will be returned; 
 
 The test scenarios can be found in `scenarios/bing.feature` and `scenarios/google.feature`, while the automation test file's path is `tests/bing.spec.ts`.
 
+Note: The automation tests are flaky due to Bing opening search results in new tabs randomly. Since this is just a demo and the task was expected to be completed within an hour, I didn't spend additional time fixing the issue.
+
 ## Installation
 
 Assuming Node.js is already installed on your device, run:

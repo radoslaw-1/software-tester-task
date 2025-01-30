@@ -43,10 +43,10 @@ test("verify the first result in the default search", async ({
   expect(firstResultCite).toContain(firstResultExpected);
 });
 
-test("verify the category filters", async ({
-  page
-}) => {
-  for (let category in selectors.searchResults.tabs) {
+for (let category in selectors.searchResults.tabs) {
+  test(`verify the ${category} filters`, async ({
+    page
+  }) => {
     console.log(category);
-  }
-})
+  })
+}

@@ -1,6 +1,9 @@
 import { Page } from "@playwright/test";
 import { test, expect } from "@playwright/test";
 
+// TODO: think of a way to verify the results are relevant to the search phrase
+// TODO: fix the issue where Bing randomly opens search results in new tabs
+
 const bingHomepage = "https://www.bing.com";
 const searchPhrase = "semrush";
 const firstResultExpected = "www.semrush.com";
@@ -53,5 +56,3 @@ for (const [key, id] of Object.entries(selectors.searchResults.tabs)) {
     expect(page.url().startsWith(`${bingHomepage}/${key}`)).toBeTruthy();
   });
 }
-
-// TODO: think of a way to verify the results are relevant to the search phrase
